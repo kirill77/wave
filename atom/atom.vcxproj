@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\RNGSobol.cpp" />
     <ClCompile Include="..\wave.cpp" />
     <ClCompile Include="atom.cpp" />
   </ItemGroup>
