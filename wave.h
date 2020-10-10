@@ -39,14 +39,7 @@ private:
 
 struct Storage
 {
-	NvU32 allocateRoot(const float2 &timePhase, const Box3f &box)
-	{
-		NvU32 rootIndex = (NvU32)m_pRoots.size();
-		m_pRoots.resize(rootIndex + 1);
-		m_pRootBoxes.push_back(box);
-		m_pRoots[rootIndex].initAsRoot(timePhase, (box[0] + box[1]) / 2.f);
-		return rootIndex;
-	}
+	NvU32 allocateRoot(const float2& timePhase, const Box3f& box);
 	const GridElem& accessRoot(NvU32 u) const { return m_pRoots[u]; }
 	GridElem& accessRoot(NvU32 u) { return m_pRoots[u]; }
 	const Box3f& getRootBox(NvU32 u) const { return m_pRootBoxes[u]; }

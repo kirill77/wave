@@ -43,6 +43,15 @@ NvU32 GridElem::computeRootIndex(const Storage& storage) const
 		(isChildOfRoot() ? m_parentIndex : storage[m_parentIndex].computeRootIndex(storage));
 }
 
+NvU32 Storage::allocateRoot(const float2& timePhase, const Box3f& box)
+{
+	NvU32 rootIndex = (NvU32)m_pRoots.size();
+	m_pRoots.resize(rootIndex + 1);
+	m_pRootBoxes.push_back(box);
+	m_pRoots[rootIndex].initAsRoot(timePhase, (box[0] + box[1]) / 2.f);
+	return rootIndex;
+}
+
 NvU32 Storage::allocate8Children()
 {
 	if (m_firstFreeChild >= m_pChildren.size())
