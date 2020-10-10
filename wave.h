@@ -10,7 +10,7 @@ struct GridElem
 {
 	inline GridElem() : m_isChildOfRoot(0), m_parentIndex(INVALID_PARENT_INDEX) { }
 
-	void split(const World& world, Storage& storage);
+	void split(const World& world, Storage& storage, const Box3f &box);
 
 	bool isRoot() const { return m_parentIndex == INVALID_PARENT_INDEX; }
 	bool hasChildren() const { return m_firstChildIndex != INVALID_CHILD_INDEX; }
@@ -76,12 +76,8 @@ private:
 struct World
 {
 	void initialize();
-
-	Box3f computeElemBox(const GridElem& elem) const;
-
 	void readPoints(std::vector<float3>& points);
 
 private:
-	void splitRecursive(GridElem& elem, NvU32 depth);
 	Storage m_storage;
 };
