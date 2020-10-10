@@ -37,9 +37,24 @@ struct MyModel : public Model
         nvAssert(false);
     }
 
+    void makeSimulationStep() { m_world.makeSimulationStep(); }
+
 private:
     std::vector<vec3> m_points;
     World m_world;
+};
+
+struct MyViewer : public Viewer
+{
+    MyViewer(const char* sName, MyModel *pModel) : Viewer(sName), m_pModel(pModel) { }
+    virtual void pre_draw()
+    {
+        m_pModel->makeSimulationStep();
+        Viewer::pre_draw();
+    }
+
+private:
+    MyModel* m_pModel;
 };
 
 int main(int argc, char** argv)
@@ -59,11 +74,11 @@ int main(int argc, char** argv)
         dir = file_system::parent_directory(dir);
     }
 
+    MyModel* pMyModel = new MyModel;
+
     // Create the default Easy3D viewer.
     // Note: a viewer must be created before creating any drawables.
-    Viewer viewer("atom");
-
-    MyModel* pMyModel = new MyModel;
+    MyViewer viewer("atom", pMyModel);
 
     // Load point cloud data from a file
     viewer.add_model(pMyModel, false);

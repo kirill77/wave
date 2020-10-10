@@ -161,3 +161,8 @@ void World::readPoints(std::vector<float3>& points)
 	CollectPoints visitor(points);
 	m_storage.visit(0, visitor);
 }
+
+void World::makeSimulationStep()
+{
+
+}

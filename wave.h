@@ -77,6 +77,7 @@ struct World
 {
 	void initialize();
 	void readPoints(std::vector<float3>& points);
+	void makeSimulationStep();
 
 private:
 	Storage m_storage;
