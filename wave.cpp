@@ -95,7 +95,14 @@ void Storage::visitInternal(GridElem* pElem, const Box3f& box, IVisitor& visitor
 
 	visitor.notifyLeaving(*pElem, box);
 }
-
+void World::initialize()
+{
+	m_storage = Storage();
+	NvU32 rootIndex = m_storage.allocateRoot(makefloat2(-1.f, 1.f), Box3f(makefloat3(-1.f), makefloat3(1.f)));
+	auto& root = m_storage.accessRoot(rootIndex);
+	// split 4 times to get some space differentiation going
+	splitRecursive(root, 3);
+}
 Box3f World::computeElemBox(const GridElem& elem) const
 {
 	// find the root of the elem and its box
@@ -125,6 +132,30 @@ Box3f World::computeElemBox(const GridElem& elem) const
 		}
 		pElem = &m_storage[childIndex];
 	}
+}
+void World::readPoints(std::vector<float3>& points)
+{
+	struct CollectPoints : public Storage::IVisitor
+	{
+		CollectPoints(std::vector<float3>& points) : m_points(points) { }
+		virtual bool notifyEntering(GridElem& elem, const Box3f& box)
+		{
+			if (!elem.hasChildren())
+			{
+				for (NvU32 uDim = 0; uDim < 3; ++uDim)
+				{
+					m_points.push_back(box[0]);
+					float3 otherPoint = box[0];
+					otherPoint[uDim] = box[1][uDim];
+					m_points.push_back(otherPoint);
+				}
+			}
+			return true;
+		}
+		std::vector<float3>& m_points;
+	};
+	CollectPoints visitor(points);
+	m_storage.visit(0, visitor);
 }
 void World::splitRecursive(GridElem& elem, NvU32 depth)
 {

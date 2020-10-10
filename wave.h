@@ -82,36 +82,11 @@ private:
 
 struct World
 {
-	void initialize()
-	{
-		m_storage = Storage();
-		NvU32 rootIndex = m_storage.allocateRoot(makefloat2(-1.f, 1.f), Box3f(makefloat3(-1.f), makefloat3(1.f)));
-		auto& root = m_storage.accessRoot(rootIndex);
-		// split 4 times to get some space differentiation going
-		splitRecursive(root, 3);
-	}
+	void initialize();
 
 	Box3f computeElemBox(const GridElem& elem) const;
 
-	void readPoints(std::vector<float3>& points)
-	{
-		struct CollectPoints : public Storage::IVisitor
-		{
-			CollectPoints(std::vector<float3>& points) : m_points(points) { }
-			virtual bool notifyEntering(GridElem& elem, const Box3f& box)
-			{
-				if (!elem.hasChildren())
-				{
-					m_points.push_back(box[0]);
-					m_points.push_back(box[1]);
-				}
-				return true;
-			}
-			std::vector<float3>& m_points;
-		};
-		CollectPoints visitor(points);
-		m_storage.visit(0, visitor);
-	}
+	void readPoints(std::vector<float3>& points);
 
 private:
 	void splitRecursive(GridElem& elem, NvU32 depth);
