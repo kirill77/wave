@@ -170,6 +170,9 @@
       <Project>{8f8df887-929b-33d7-9f62-17d78038d9a8}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Power2Distribution.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

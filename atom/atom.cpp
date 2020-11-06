@@ -7,7 +7,8 @@
 #include <easy3d/fileio/resources.h>
 #include <easy3d/util/logging.h>
 #include <easy3d/util/file_system.h>
-#include "..\wave.h"
+#include "../wave.h"
+#include "../Power2Distribution.h"
 
 using namespace easy3d;
 
@@ -59,6 +60,8 @@ private:
 
 int main(int argc, char** argv)
 {
+    nvAssert(Power2Distribution::dbgDoesTestPass());
+
     // initialize logging
     logging::initialize();
 

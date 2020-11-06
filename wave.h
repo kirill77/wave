@@ -10,7 +10,7 @@ struct GridElem
 {
 	inline GridElem() : m_isChildOfRoot(0), m_parentIndex(INVALID_PARENT_INDEX) { }
 
-	void split(const World& world, Storage& storage, const Box3f &box);
+	void split(const World& world, Storage& storage, const float3Box &box);
 
 	bool isRoot() const { return m_parentIndex == INVALID_PARENT_INDEX; }
 	bool hasChildren() const { return m_firstChildIndex != INVALID_CHILD_INDEX; }
@@ -39,10 +39,10 @@ private:
 
 struct Storage
 {
-	NvU32 allocateRoot(const float2& timePhase, const Box3f& box);
+	NvU32 allocateRoot(const float2& timePhase, const float3Box& box);
 	const GridElem& accessRoot(NvU32 u) const { return m_pRoots[u]; }
 	GridElem& accessRoot(NvU32 u) { return m_pRoots[u]; }
-	const Box3f& getRootBox(NvU32 u) const { return m_pRootBoxes[u]; }
+	const float3Box& getRootBox(NvU32 u) const { return m_pRootBoxes[u]; }
 
 	NvU32 allocate8Children();
 	inline NvU32 getRootIndex(const GridElem& elem) const { return (NvU32)(&elem - &m_pRoots[0]); }
@@ -57,8 +57,8 @@ struct Storage
 
 	struct IVisitor
 	{
-		virtual bool notifyEntering(GridElem& elem, const Box3f& box) = 0;
-		virtual void notifyLeaving(GridElem& elem, const Box3f& box) { }
+		virtual bool notifyEntering(GridElem& elem, const float3Box& box) = 0;
+		virtual void notifyLeaving(GridElem& elem, const float3Box& box) { }
 	};
 	inline void visit(NvU32 rootIndex, IVisitor& visitor)
 	{
@@ -66,9 +66,9 @@ struct Storage
 	}
 
 private:
-	void visitInternal(GridElem* pElem, const Box3f& box, IVisitor& visitor);
+	void visitInternal(GridElem* pElem, const float3Box& box, IVisitor& visitor);
 	std::vector<GridElem> m_pRoots; 
-	std::vector<Box3f> m_pRootBoxes;
+	std::vector<float3Box> m_pRootBoxes;
 	BlockArray<GridElem> m_pChildren; // this is primary grid everyone is working with
 	NvU32 m_firstFreeChild = ~0;
 };

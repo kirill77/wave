@@ -20,9 +20,9 @@
 				{ return m_data; } \
 			/* Subscript operators - built-in subscripts are ambiguous without these */ \
 			T & operator [] (int i) \
-				{ return m_data[i]; } \
+				{ nvAssert(i < n); return m_data[i]; } \
 			const T & operator [] (int i) const \
-				{ return m_data[i]; } \
+				{ nvAssert(i < n); return m_data[i]; } \
 			/* Conversion to bool is not allowed (otherwise would \
 			   happen implicitly through array conversions) */ \
 			private: operator bool();
@@ -486,11 +486,3 @@ T maxComponent(rtvector<T, n> const& a)
 		result = max(result, a[i]);
 	return result;
 }
-
-#ifndef max
-#define max(a,b)            (((a) > (b)) ? (a) : (b))
-#endif
-
-#ifndef min
-#define min(a,b)            (((a) < (b)) ? (a) : (b))
-#endif
