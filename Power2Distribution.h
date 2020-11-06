@@ -83,25 +83,27 @@ struct Power2Distribution
     static double generate(double fIn01Number, double fMaxPDFLocation, double& fOutWeight)
     {
         double fSmallestIntervalSize = fMaxPDFLocation / (1 << MAX_LEFT_EXPONENT);
-        double fSplit = MAX_LEFT_EXPONENT / (double)(MAX_LEFT_EXPONENT + MAX_RIGHT_EXPONENT);
+        double fSplit = MAX_LEFT_EXPONENT / (double)(MAX_LEFT_EXPONENT + MAX_RIGHT_EXPONENT), fExponent;
+        NvU32 uExponent;
         // generate sample on the left or right?
         if (fIn01Number < fSplit)
         {
             fIn01Number = 1 - fIn01Number / fSplit; // we want 0 to correspond to max exponent (left boundary)
-            double fExponent = fIn01Number * MAX_LEFT_EXPONENT;
-            NvU32 uExponent = std::min((NvU32)fExponent, MAX_LEFT_EXPONENT - 1);
-            fIn01Number = fExponent - uExponent;
+            fExponent = fIn01Number * MAX_LEFT_EXPONENT;
+            uExponent = std::min((NvU32)fExponent, MAX_LEFT_EXPONENT - 1);
             //double fRightBoundary = 1 - fSmallestIntervalSize * ((1 << uExponent) - 1);
             //return fRightBoundary - fIntervalSize * fIn01Number;
-            fOutWeight = (1 << uExponent);
-            return fMaxPDFLocation - fSmallestIntervalSize * ((1 << uExponent) * (fIn01Number + 1) - 1);
+            fSmallestIntervalSize *= -1;
         }
-        fIn01Number = (fIn01Number - fSplit) / (1 - fSplit);
-        double fExponent = fIn01Number * MAX_RIGHT_EXPONENT;
-        NvU32 uExponent = std::min((NvU32)fExponent, MAX_RIGHT_EXPONENT - 1);
+        else
+        {
+            fIn01Number = (fIn01Number - fSplit) / (1 - fSplit);
+            fExponent = fIn01Number * MAX_RIGHT_EXPONENT;
+            uExponent = std::min((NvU32)fExponent, MAX_RIGHT_EXPONENT - 1);
+            //double fLeftBoundary = 1 + fSmallestIntervalSize * ((1 << uExponent) - 1);
+            //return fLeftBoundary + fIntervalSize * fIn01Number;
+        }
         fIn01Number = fExponent - uExponent;
-        //double fLeftBoundary = 1 + fSmallestIntervalSize * ((1 << uExponent) - 1);
-        //return fLeftBoundary + fIntervalSize * fIn01Number;
         fOutWeight = (1 << uExponent);
         return fMaxPDFLocation + fSmallestIntervalSize * ((1 << uExponent) * (fIn01Number + 1) - 1);
     }
