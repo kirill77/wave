@@ -23,7 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{39a3e85d-4389-4884-8f3c-513c8052b476}</ProjectGuid>
     <RootNamespace>atom</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -160,11 +160,44 @@
     <ProjectReference Include="..\Easy3D\build\3rd_party\glog\glog.vcxproj">
       <Project>{e466dea6-cbaf-3c48-ad94-10bccc647c44}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\kd_tree\kd_tree.vcxproj">
+      <Project>{a01e0810-beb8-3e85-96b2-fea481d413ca}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\LAStools\LAStools.vcxproj">
+      <Project>{2f889403-f410-3ec3-ac8e-d18c19ab30d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\libtess\libtess.vcxproj">
+      <Project>{731939fd-8eb7-3ddd-8877-159e6b3563c4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\poisson_recon-9.0.1\poisson_recon-9.0.1.vcxproj">
+      <Project>{2abda18b-1b31-3ae9-92d9-5897a89fdb22}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\RANSAC-1.1\RANSAC-1.1.vcxproj">
+      <Project>{b800fe84-0547-3dd0-a6f9-437ce7481412}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\rply\rply.vcxproj">
+      <Project>{8bb1fd55-4f71-36f8-a3c1-aa62e85f3fb1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\tetgen\tetgen.vcxproj">
+      <Project>{31f822f3-ef60-3f5e-b3db-0e1c0c4a6351}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\3rd_party\triangle\triangle.vcxproj">
+      <Project>{ef5f0615-3a4a-322a-8b4f-01704ea466d6}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Easy3D\build\easy3d\algo\algo.vcxproj">
       <Project>{eca4b8bb-86cb-324b-b95e-8d027780f9c2}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\easy3d\core\core.vcxproj">
+      <Project>{29126ccb-4c39-380d-803e-2c2331a63b2a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\easy3d\fileio\fileio.vcxproj">
+      <Project>{1082c515-eefd-3efa-82e8-6f2f8722c674}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Easy3D\build\easy3d\renderer\renderer.vcxproj">
       <Project>{e0088989-2339-3967-8fb0-9c0279f1f2cf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Easy3D\build\easy3d\util\util.vcxproj">
+      <Project>{98d71d95-fdb1-3772-97c3-7c044593ca44}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Easy3D\build\easy3d\viewer\viewer.vcxproj">
       <Project>{8f8df887-929b-33d7-9f62-17d78038d9a8}</Project>
