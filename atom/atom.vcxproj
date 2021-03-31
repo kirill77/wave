@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\Easy3D;$(ProjectDir)\..\Easy3D\build;$(ProjectDir)\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\Easy3D;$(ProjectDir)\..\..\Easy3D\build;$(ProjectDir)\..\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\Easy3D;$(ProjectDir)\..\Easy3D\build;$(ProjectDir)\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\Easy3D;$(ProjectDir)\..\..\Easy3D\build;$(ProjectDir)\..\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;GLEW_STATIC;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;GLEW_NO_GLU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\Easy3D;$(ProjectDir)\..\Easy3D\build;$(ProjectDir)\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\Easy3D;$(ProjectDir)\..\..\Easy3D\build;$(ProjectDir)\..\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,7 +136,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;GLEW_STATIC;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;GLEW_NO_GLU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\Easy3D;$(ProjectDir)\..\Easy3D\build;$(ProjectDir)\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\Easy3D;$(ProjectDir)\..\..\Easy3D\build;$(ProjectDir)\..\..\Easy3D\build\3rd_party\glog;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src;$(ProjectDir)\..\..\Easy3D\3rd_party\glog\src\windows;$(ProjectDir)\..\..\Easy3D\3rd_party\glew\include;$(ProjectDir)\..\..\Easy3D\3rd_party\glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,60 +151,63 @@
     <ClCompile Include="atom.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\glew\glew.vcxproj">
-      <Project>{8493505a-5b3a-39c4-a4a7-537f2a505f6f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\glfw\src\glfw.vcxproj">
-      <Project>{9379373a-0cef-333d-839e-fbd2c9424078}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\glog\glog.vcxproj">
-      <Project>{e466dea6-cbaf-3c48-ad94-10bccc647c44}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\kd_tree\kd_tree.vcxproj">
-      <Project>{a01e0810-beb8-3e85-96b2-fea481d413ca}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\LAStools\LAStools.vcxproj">
-      <Project>{2f889403-f410-3ec3-ac8e-d18c19ab30d4}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\libtess\libtess.vcxproj">
-      <Project>{731939fd-8eb7-3ddd-8877-159e6b3563c4}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\poisson_recon-9.0.1\poisson_recon-9.0.1.vcxproj">
-      <Project>{2abda18b-1b31-3ae9-92d9-5897a89fdb22}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\RANSAC-1.1\RANSAC-1.1.vcxproj">
-      <Project>{b800fe84-0547-3dd0-a6f9-437ce7481412}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\rply\rply.vcxproj">
-      <Project>{8bb1fd55-4f71-36f8-a3c1-aa62e85f3fb1}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\tetgen\tetgen.vcxproj">
-      <Project>{31f822f3-ef60-3f5e-b3db-0e1c0c4a6351}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\3rd_party\triangle\triangle.vcxproj">
-      <Project>{ef5f0615-3a4a-322a-8b4f-01704ea466d6}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\easy3d\algo\algo.vcxproj">
-      <Project>{eca4b8bb-86cb-324b-b95e-8d027780f9c2}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\easy3d\core\core.vcxproj">
-      <Project>{29126ccb-4c39-380d-803e-2c2331a63b2a}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\easy3d\fileio\fileio.vcxproj">
-      <Project>{1082c515-eefd-3efa-82e8-6f2f8722c674}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\easy3d\renderer\renderer.vcxproj">
-      <Project>{e0088989-2339-3967-8fb0-9c0279f1f2cf}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\easy3d\util\util.vcxproj">
-      <Project>{98d71d95-fdb1-3772-97c3-7c044593ca44}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Easy3D\build\easy3d\viewer\viewer.vcxproj">
-      <Project>{8f8df887-929b-33d7-9f62-17d78038d9a8}</Project>
-    </ProjectReference>
+    <ClInclude Include="..\Power2Distribution.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Power2Distribution.h" />
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glew\glew.vcxproj">
+      <Project>{6c44229a-4206-3d54-9f5a-9570bbb5197e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glfw\src\glfw.vcxproj">
+      <Project>{7a9a7033-7bdd-3f53-842d-dc02701bdecb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glog\glog.vcxproj">
+      <Project>{db84840b-9a0b-35c9-8230-223a989a0b9f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\kd_tree\kd_tree.vcxproj">
+      <Project>{c1a12fe2-5b7e-327c-ba76-fb2c74a784bc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\LAStools\LAStools.vcxproj">
+      <Project>{a95684dc-0b39-37fa-9e08-6ce469a5f007}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\libtess\libtess.vcxproj">
+      <Project>{aa40fdf8-d22b-39e8-a796-91aecd5d7784}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\poisson_recon-9.0.1\poisson_recon-9.0.1.vcxproj">
+      <Project>{4594ee19-4df3-38b8-8331-b94f8a6b02c7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\RANSAC-1.1\RANSAC-1.1.vcxproj">
+      <Project>{8312344a-e50f-339b-a300-51f28647ee5b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\rply\rply.vcxproj">
+      <Project>{6988dcb1-26e3-32ae-940c-3755f6ac4048}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\tetgen\tetgen.vcxproj">
+      <Project>{c32f47f7-b4eb-3949-b250-7e6dc72d8cfd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\triangle\triangle.vcxproj">
+      <Project>{9fc8ef66-951d-3def-b301-e1e6cec1306f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\algo\algo.vcxproj">
+      <Project>{e3ec3c67-4271-3b75-b514-918f011a018c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\core\core.vcxproj">
+      <Project>{ede6ada7-618b-35d5-aff9-726169614850}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\fileio\fileio.vcxproj">
+      <Project>{8a3c6e33-d7a6-3919-98fd-59f099c4155d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\kdtree\kdtree.vcxproj">
+      <Project>{0eb85b6b-f01d-3cfe-9678-136f55e9c9c5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\renderer\renderer.vcxproj">
+      <Project>{d9191384-196c-3287-b16b-92366177d4d8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\util\util.vcxproj">
+      <Project>{17b26bcd-5e07-3eab-875b-6336171f9325}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\viewer\viewer.vcxproj">
+      <Project>{a7923977-a67a-3fec-a4fa-71bf3a31c1a2}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
