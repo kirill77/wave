@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "../MyMisc.h"
 #include <direct.h>
 #include <easy3d/viewer/viewer.h>
@@ -20,24 +21,19 @@ struct MyModel : public Model
         m_world.readPoints((std::vector<float3>&)m_points);
     }
 
-    /** The vertices of the model. */
-    virtual const std::vector<vec3>& points() const
+    virtual std::vector<vec3>& points() override
     {
         return m_points;
     }
-
-    /** Test if the model is empty. */
-    bool empty() const
+    virtual const std::vector<vec3>& points() const override
     {
-        return points().empty();
-    };
-
+        return m_points;
+    }
     /** prints the names of all properties to an output stream (e.g., std::cout). */
-    virtual void property_stats(std::ostream& output) const
+    virtual void property_stats(std::ostream& output) const override
     {
         nvAssert(false);
     }
-
     void makeSimulationStep() { m_world.makeSimulationStep(); }
 
 private:

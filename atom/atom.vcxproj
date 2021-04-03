@@ -154,59 +154,62 @@
     <ClInclude Include="..\Power2Distribution.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glew\glew.vcxproj">
-      <Project>{6c44229a-4206-3d54-9f5a-9570bbb5197e}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\backward\3rd_backward.vcxproj">
+      <Project>{8fb0f76e-9922-3c86-9f43-f250bd772427}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glfw\src\glfw.vcxproj">
-      <Project>{7a9a7033-7bdd-3f53-842d-dc02701bdecb}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\easyloggingpp\3rd_easyloggingpp.vcxproj">
+      <Project>{c99598e5-1118-305b-bf0c-a09041be0deb}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glog\glog.vcxproj">
-      <Project>{db84840b-9a0b-35c9-8230-223a989a0b9f}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glew\3rd_glew.vcxproj">
+      <Project>{e0279de7-a82f-36bc-a768-cf2fa19b98e5}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\kd_tree\kd_tree.vcxproj">
-      <Project>{c1a12fe2-5b7e-327c-ba76-fb2c74a784bc}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glfw\src\3rd_glfw.vcxproj">
+      <Project>{c5f1bc8f-2b5a-3a76-beb4-7ace4080aab4}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\LAStools\LAStools.vcxproj">
-      <Project>{a95684dc-0b39-37fa-9e08-6ce469a5f007}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\glutess\3rd_glutess.vcxproj">
+      <Project>{d71131f3-400c-341c-97a3-2f0a1c8df811}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\libtess\libtess.vcxproj">
-      <Project>{aa40fdf8-d22b-39e8-a796-91aecd5d7784}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\kdtree\3rd_kdtree.vcxproj">
+      <Project>{c09d7fcc-0d3c-3316-aa39-ce15658735ec}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\poisson_recon-9.0.1\poisson_recon-9.0.1.vcxproj">
-      <Project>{4594ee19-4df3-38b8-8331-b94f8a6b02c7}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\lastools\3rd_lastools.vcxproj">
+      <Project>{b7a47289-08fd-3a44-8729-d1bd964d7e51}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\RANSAC-1.1\RANSAC-1.1.vcxproj">
-      <Project>{8312344a-e50f-339b-a300-51f28647ee5b}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\poisson\3rd_poisson.vcxproj">
+      <Project>{dab71185-c6df-325b-8bc9-fe0c226f51b0}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\rply\rply.vcxproj">
-      <Project>{6988dcb1-26e3-32ae-940c-3755f6ac4048}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\ransac\3rd_ransac.vcxproj">
+      <Project>{f482965c-b52e-377e-81a7-5c60cf3b0197}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\tetgen\tetgen.vcxproj">
-      <Project>{c32f47f7-b4eb-3949-b250-7e6dc72d8cfd}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\rply\3rd_rply.vcxproj">
+      <Project>{57b32535-8a9d-39a0-8369-dd91e9c745aa}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\3rd_party\triangle\triangle.vcxproj">
-      <Project>{9fc8ef66-951d-3def-b301-e1e6cec1306f}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\tetgen\3rd_tetgen.vcxproj">
+      <Project>{49859ad5-3e38-3413-a53c-aeda899ae454}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\algo\algo.vcxproj">
-      <Project>{e3ec3c67-4271-3b75-b514-918f011a018c}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\3rd_party\triangle\3rd_triangle.vcxproj">
+      <Project>{36795ea1-018c-3364-ac46-b9902e264754}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\core\core.vcxproj">
-      <Project>{ede6ada7-618b-35d5-aff9-726169614850}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\algo\easy3d_algo.vcxproj">
+      <Project>{e2c23a57-b64d-39d9-854b-8aa70b284035}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\fileio\fileio.vcxproj">
-      <Project>{8a3c6e33-d7a6-3919-98fd-59f099c4155d}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\core\easy3d_core.vcxproj">
+      <Project>{1ad7d0fb-f570-3084-a6ab-9834b7e392ce}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\kdtree\kdtree.vcxproj">
-      <Project>{0eb85b6b-f01d-3cfe-9678-136f55e9c9c5}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\fileio\easy3d_fileio.vcxproj">
+      <Project>{a8ff4944-56a0-3729-b86a-ab4e9272605f}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\renderer\renderer.vcxproj">
-      <Project>{d9191384-196c-3287-b16b-92366177d4d8}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\kdtree\easy3d_kdtree.vcxproj">
+      <Project>{24b278fe-cc27-38ac-9507-53ab5ddc45ac}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\util\util.vcxproj">
-      <Project>{17b26bcd-5e07-3eab-875b-6336171f9325}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\renderer\easy3d_renderer.vcxproj">
+      <Project>{516181fd-d01c-3fac-90da-b3b5025c3124}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Easy3D\build\easy3d\viewer\viewer.vcxproj">
-      <Project>{a7923977-a67a-3fec-a4fa-71bf3a31c1a2}</Project>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\util\easy3d_util.vcxproj">
+      <Project>{a50bb819-5469-319e-9d99-d8a942ffc0de}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Easy3D\build\easy3d\viewer\easy3d_viewer.vcxproj">
+      <Project>{fd10bbe7-d30b-3138-80ad-794beb686de9}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
